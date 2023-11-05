@@ -1,8 +1,8 @@
 {
-    "name": "react-express-ssr",
+    "name": "ssr-react-express",
     "version": "1.0.0",
     "main": "index.js",
-    "description": "React Express Redux SSR",
+    "description": "SSR React Express Redux",
     "scripts": {
         "dev": "npm-run-all --parallel dev:*",
         "dev:server": "nodemon --watch dist --exec \"node dist/server.js\"",
@@ -34,7 +34,6 @@
         "redux-devtools-extension": "^2.13.9",
         "sass": "^1.69.5",
         "sass-loader": "^13.3.2",
-        "style-loader": "^3.3.3",
         "webpack": "^5.89.0",
         "webpack-cli": "^5.1.4",
         "webpack-dev-server": "^4.15.1",
