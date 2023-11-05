@@ -1,0 +1,125 @@
+$white: #ffffff !default;
+$gray-100: #fafafa !default;
+$gray-200: #f5f5f5 !default;
+$gray-300: #f0f0f0 !default;
+$gray-400: #d9d9d9 !default;
+$gray-500: #bfbfbf !default;
+$gray-600: #8c8c8c !default;
+$gray-700: #595959 !default;
+$gray-800: #434343 !default;
+$gray-900: #262626 !default;
+$gray-1000: #1f1f1f !default;
+$gray-1100: #141414 !default;
+$black: #000000 !default;
+
+$blue-100: #f0f9ff !default;
+$blue-200: #d1edff !default;
+$blue-300: #a8d9ff !default;
+$blue-400: #75bfff !default;
+$blue-500: #57abff !default;
+$blue-600: #2d8eff !default;
+$blue-700: #1c6ed9 !default;
+$blue-800: #0e50b3 !default;
+$blue-900: #04368c !default;
+$blue-1000: #022366 !default;
+
+$warning-100: #fffdf0 !default;
+$warning-200: #fffbe0 !default;
+$warning-300: #fff3b8 !default;
+$warning-400: #ffe98f !default;
+$warning-500: #ffdb66 !default;
+$warning-600: #ffcc3d !default;
+$warning-700: #d9a429 !default;
+$warning-800: #b37f19 !default;
+$warning-900: #8c5d0d !default;
+$warning-1000: #664008 !default;
+
+$negative-100: #fff3f0 !default;
+$negative-200: #ffe5e0 !default;
+$negative-300: #ffcac4 !default;
+$negative-400: #ffa29c !default;
+$negative-500: #ff7773 !default;
+$negative-600: #ff4949 !default;
+$negative-700: #d9343a !default;
+$negative-800: #b3222c !default;
+$negative-900: #8c1420 !default;
+$negative-1000: #660d19 !default;
+
+$green-100: #e6ffed !default;
+$green-200: #baffd0 !default;
+$green-300: #8cf5b0 !default;
+$green-400: #5fe894 !default;
+$green-500: #37db7b !default;
+$green-600: #13ce66 !default;
+$green-700: #07a855 !default;
+$green-800: #008243 !default;
+$green-900: #005c32 !default;
+$green-1000: #00361f !default;
+
+$grays: (
+    'white': $white,
+    '100': $gray-100,
+    '200': $gray-200,
+    '300': $gray-300,
+    '400': $gray-400,
+    '500': $gray-500,
+    '600': $gray-600,
+    '700': $gray-700,
+    '800': $gray-800,
+    '900': $gray-900,
+    '1000': $gray-1000,
+    '1100': $gray-1100,
+    'black': $black,
+) !default;
+
+$blues: (
+    'blue-100': $blue-100,
+    'blue-200': $blue-200,
+    'blue-300': $blue-300,
+    'blue-400': $blue-400,
+    'blue-500': $blue-500,
+    'blue-600': $blue-600,
+    'blue-700': $blue-700,
+    'blue-800': $blue-800,
+    'blue-900': $blue-900,
+    'blue-1000': $blue-1000,
+) !default;
+
+$warnings: (
+    'warning-100': $warning-100,
+    'warning-200': $warning-200,
+    'warning-300': $warning-300,
+    'warning-400': $warning-400,
+    'warning-500': $warning-500,
+    'warning-600': $warning-600,
+    'warning-700': $warning-700,
+    'warning-800': $warning-800,
+    'warning-900': $warning-900,
+    'warning-1000': $warning-1000,
+);
+
+$negatives: (
+    'negative-100': $negative-100,
+    'negative-200': $negative-200,
+    'negative-300': $negative-300,
+    'negative-400': $negative-400,
+    'negative-500': $negative-500,
+    'negative-600': $negative-600,
+    'negative-700': $negative-700,
+    'negative-800': $negative-800,
+    'negative-900': $negative-900,
+    'negative-1000': $negative-1000,
+) !default;
+
+$greens: (
+    'green-100': $green-100,
+    'green-200': $green-200,
+    'green-300': $green-300,
+    'green-400': $green-400,
+    'green-500': $green-500,
+    'green-600': $green-600,
+    'green-700': $green-700,
+    'green-800': $green-800,
+    'green-900': $green-900,
+    'green-1000': $green-1000,
+) !default;

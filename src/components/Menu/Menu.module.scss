@@ -1,0 +1,25 @@
+@import '../../styles/foundation/all';
+
+.top-nav {
+    display: flex;
+    gap: map-get($spacing, '24');
+}
+
+.top-nav__menu {
+    display: flex;
+    gap: 20px;
+    font-size: map-get($font-size, 'base');
+}
+
+.top-nav__menu-item {
+    color: $gray-100;
+    cursor: pointer;
+    transition: color 0.2s ease-in-out;
+    &:hover {
+        color: $gray-300;
+    }
+}
+
+.top-nav__menu-item--active {
+    color: $primary-color;
+}

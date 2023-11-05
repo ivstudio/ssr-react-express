@@ -1,0 +1,15 @@
+@import 'foundation/all';
+@import 'mixins/all';
+@import 'base/reset';
+
+body {
+    margin: map-get($spacing, '0');
+    font-family: $body-font-family;
+    font-size: $body-font-size;
+    font-weight: $body-font-weight;
+    background-color: $gray-200;
+}
+
+a {
+    text-decoration: none;
+}

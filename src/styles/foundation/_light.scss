@@ -1,0 +1,14 @@
+$primary-color: var(--tg-primary-color, $blue-500) !default;
+
+/*=============================================
+    Background and outline colors                    
+=============================================*/
+$body-bg-color: var(--tg-body-bg-color, $gray-200) !default;
+$paper-bg-color: var(--tg-paper-bg-color, $white) !default;
+$border-color: var(--tg-border-color, $gray-300) !default;
+
+/*=============================================
+    Text colors                    
+=============================================*/
+$body-text-color: var(--tg-body-text-color, $gray-700) !default;
+$text-primary-color: var(--tg-text-primary-color, $gray-700) !default;

@@ -1,0 +1,42 @@
+{
+    "name": "react-express-ssr",
+    "version": "1.0.0",
+    "main": "index.js",
+    "description": "React Express Redux SSR",
+    "scripts": {
+        "dev": "npm-run-all --parallel dev:*",
+        "dev:server": "nodemon --watch dist --exec \"node dist/server.js\"",
+        "dev:buildserver": "webpack  --mode development --config webpack.server.js --watch",
+        "dev:buildclient": "webpack  --mode development --config webpack.client.js --watch"
+    },
+    "dependencies": {
+        "express": "^4.18.2",
+        "react": "^18.0.0",
+        "react-dom": "^18.0.0",
+        "react-redux": "^8.1.3",
+        "react-router-dom": "^6.16.0",
+        "redux": "^4.2.1",
+        "redux-thunk": "^2.4.2"
+    },
+    "devDependencies": {
+        "@babel/cli": "^7.23.0",
+        "@babel/core": "^7.23.2",
+        "@babel/preset-env": "^7.23.2",
+        "@babel/preset-react": "^7.22.15",
+        "babel-loader": "^9.1.3",
+        "css-loader": "^6.8.1",
+        "css-minimizer-webpack-plugin": "^5.0.1",
+        "mini-css-extract-plugin": "^2.7.6",
+        "nodemon": "^3.0.1",
+        "npm-run-all": "^4.1.3",
+        "prettier": "^3.0.3",
+        "redux-devtools-extension": "^2.13.9",
+        "sass": "^1.69.5",
+        "sass-loader": "^13.3.2",
+        "style-loader": "^3.3.3",
+        "webpack": "^5.89.0",
+        "webpack-cli": "^5.1.4",
+        "webpack-dev-server": "^4.15.1",
+        "webpack-node-externals": "^3.0.0"
+    }
+}

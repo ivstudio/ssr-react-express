@@ -1,0 +1,20 @@
+@import '../../styles/foundation/all';
+
+.container {
+    height: 60px;
+    position: sticky;
+    top: map-get($spacing, '0');
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 map-get($spacing, '24');
+    border-bottom: 1px solid $gray-300;
+    color: $blue-100;
+    background-color: $black;
+}
+
+.logo {
+    font-size: map-get($font-size, 'h4');
+    font-weight: $font-weight-bold;
+    cursor: pointer;
+}
