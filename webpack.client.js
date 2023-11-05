@@ -8,6 +8,7 @@ const config = {
     output: {
         filename: 'bundle.js',
         path: path.resolve(__dirname, 'public'),
+        publicPath: '/',
     },
     module: {
         rules: [
@@ -54,7 +55,7 @@ const config = {
                 },
             }),
         ],
-        // minimize: true,
+        minimize: true,
     },
     plugins: [
         new MiniCssExtractPlugin(),

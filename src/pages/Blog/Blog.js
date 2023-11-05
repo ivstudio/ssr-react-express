@@ -2,7 +2,9 @@ import React from 'react';
 import { useSelector } from 'react-redux';
 import { fetchBlogPosts } from '@/redux/actions/blogActions';
 import Card from '@/components/Card';
+import Container from '@/components/Container';
 import useServerSideProps from '@/hooks/useServerSideProps';
+import styles from './Blog.module.scss';
 
 const Blog = () => {
     const posts = useSelector(state => state.blog.posts);
@@ -13,11 +15,11 @@ const Blog = () => {
     }
 
     return (
-        <section>
+        <Container className={styles['blog-container']}>
             {posts.map(post => (
                 <Card key={post.id} data={post} />
             ))}
-        </section>
+        </Container>
     );
 };
 

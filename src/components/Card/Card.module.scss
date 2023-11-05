@@ -1,3 +1,23 @@
-.container {
-    background-color: aqua;
+@import '../../styles/utils';
+
+.card-link {
+    background-color: $gray-100;
+    padding: map-get($spacing, '16');
+    border: 1px solid $border-color;
+    border-radius: map-get($border-radius, md);
+
+    &:hover {
+        background-color: $gray-200;
+    }
+}
+
+.card-title {
+    margin-top: map-get($spacing, '0');
+    margin-bottom: map-get($spacing, '16');
+    color: $gray-900;
+}
+
+.card-description {
+    margin: map-get($spacing, '0');
+    color: $gray-1000;
 }

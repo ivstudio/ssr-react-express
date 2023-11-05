@@ -4,12 +4,14 @@ import styles from './Card.module.scss';
 
 const Card = ({ data }) => {
     return (
-        <article className={styles.container}>
-            <h2>{data.title}</h2>
-            <p>{data.body}</p>
-
-            <Link to={`/blog/${data.id}`}>Read more...</Link>
-        </article>
+        <Link
+            to={`/blog/${data.id}`}
+            title={data.title}
+            className={styles['card-link']}
+        >
+            <h2 className={styles['card-title']}>{data.title}</h2>
+            <p className={styles['card-description']}>{data.body}</p>
+        </Link>
     );
 };
 

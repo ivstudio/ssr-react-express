@@ -1,0 +1,15 @@
+@import '../../styles/utils';
+
+.blog-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: map-get($spacing, '24');
+
+    @include screen-up(md) {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    @include screen-up(lg) {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+}

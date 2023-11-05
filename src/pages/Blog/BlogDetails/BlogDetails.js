@@ -3,6 +3,8 @@ import { useSelector } from 'react-redux';
 import { fetchBlogDetails } from '@/redux/actions/blogActions';
 import { useParams } from 'react-router-dom';
 import useServerSideProps from '@/hooks/useServerSideProps';
+import Container from '@/components/Container';
+import styles from './Blog.module.scss';
 
 const BlogDetails = () => {
     const { postId } = useParams();
@@ -14,12 +16,12 @@ const BlogDetails = () => {
     }
 
     return (
-        <div>
+        <Container className={styles['blog-details-container']}>
             <h1>{post.title}</h1>
             <h2>By user id:{post.userId}</h2>
             <h3>Post id:{post.id}</h3>
             <p>{post.body}</p>
-        </div>
+        </Container>
     );
 };
 

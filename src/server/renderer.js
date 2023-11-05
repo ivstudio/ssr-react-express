@@ -23,7 +23,7 @@ export default req => {
     <html>
         <head>
           <title>React Redux Express SSR</title>
-          <link href="main.css" rel="stylesheet">
+          <link rel="stylesheet" href="/main.css">
         </head>
         <body>
           <div id="root">${html}</div>
@@ -32,7 +32,7 @@ export default req => {
                 preloadedState
             ).replace(/</g, '\\u003c')}
           </script>
-          <script src="/bundle.js"></script>
+          <script src="bundle.js"></script>
         </body>
     </html>
   `;

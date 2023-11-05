@@ -1,5 +1,16 @@
-@import '../../styles/foundation/variables';
+@import '../../styles/utils';
 
 .container {
     width: 100%;
+    margin: 0 auto map-get($spacing, '40');
+    padding: 0 map-get($spacing, '24');
+    box-sizing: border-box;
+
+    @include screen-up(md) {
+        max-width: map-get($grid-breakpoints, md);
+    }
+
+    @include screen-up(lg) {
+        max-width: map-get($grid-breakpoints, lg);
+    }
 }

@@ -1,4 +1,4 @@
-$container-max-widths: (
+$grid-breakpoints: (
     xs: 420px,
     sm: 600px,
     md: 900px,
@@ -44,3 +44,9 @@ $body-font-family:
     Droid Sans,
     Helvetica Neue,
     sans-serif;
+
+$border-radius: (
+    sm: 4px,
+    md: 8px,
+    lg: 16px,
+) !default;

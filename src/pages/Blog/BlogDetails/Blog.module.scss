@@ -1,0 +1,5 @@
+@import '../../../styles/utils';
+
+.blog-details-container {
+    max-width: map-get($grid-breakpoints, md);
+}

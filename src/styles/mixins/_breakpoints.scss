@@ -1,7 +1,27 @@
+// Get the minimum breakpoint value for a given breakpoint name
+@function breakpoint-next(
+    $name,
+    $breakpoints: $grid-breakpoints,
+    $breakpoint-names: map-keys($breakpoints)
+) {
+    $n: index($breakpoint-names, $name);
+    @return if(
+        $n < length($breakpoint-names),
+        nth($breakpoint-names, $n + 1),
+        null
+    );
+}
+
 // Get the next breakpoint name for a given breakpoint name
 @function breakpoint-min($name, $breakpoints: $grid-breakpoints) {
     $min: map-get($breakpoints, $name);
     @return if($min != 0, $min, null);
+}
+
+// Get the maximum breakpoint value for a given breakpoint name
+@function breakpoint-max($name, $breakpoints: $grid-breakpoints) {
+    $next: breakpoint-next($name, $breakpoints);
+    @return if($next, breakpoint-min($next, $breakpoints) - 0.02px, null);
 }
 
 // Mixin for applying styles for a given breakpoint and up
@@ -13,5 +33,56 @@
         }
     } @else {
         @content;
+    }
+}
+
+// Mixin for applying styles for a given breakpoint and down
+@mixin screen-down($name, $breakpoints: $grid-breakpoints) {
+    $max: breakpoint-max($name, $breakpoints);
+    @if $max {
+        @media (max-width: $max) {
+            @content;
+        }
+    } @else {
+        @content;
+    }
+}
+
+// Mixin for applying styles for a range of breakpoints
+@mixin screen-between($lower, $upper, $breakpoints: $grid-breakpoints) {
+    $min: breakpoint-min($lower, $breakpoints);
+    $max: breakpoint-max($upper, $breakpoints);
+
+    @if $min != null and $max != null {
+        @media (min-width: $min) and (max-width: $max) {
+            @content;
+        }
+    } @else if $max == null {
+        @include screen-up($lower, $breakpoints) {
+            @content;
+        }
+    } @else if $min == null {
+        @include screen-down($upper, $breakpoints) {
+            @content;
+        }
+    }
+}
+
+@mixin screen-only($name, $breakpoints: $grid-breakpoints) {
+    $min: breakpoint-min($name, $breakpoints);
+    $max: breakpoint-max($name, $breakpoints);
+
+    @if $min != null and $max != null {
+        @media (min-width: $min) and (max-width: $max) {
+            @content;
+        }
+    } @else if $max == null {
+        @include screen-up($name, $breakpoints) {
+            @content;
+        }
+    } @else if $min == null {
+        @include screen-down($name, $breakpoints) {
+            @content;
+        }
     }
 }

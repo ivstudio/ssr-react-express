@@ -17,13 +17,11 @@ const routes = [
     {
         component: Blog,
         path: '/blog',
-        exact: true,
         loadData: ssrBlog.fetchBlogPosts,
     },
     {
         component: BlogDetails,
         path: '/blog/:postId',
-        exact: true,
         loadData: ssrBlogDetails.fetchBlogDetails,
     },
 ];
