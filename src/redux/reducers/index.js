@@ -1,10 +1,13 @@
 import { combineReducers } from 'redux';
+
+import appReducer from './appReducer';
 import blogReducer from './blogReducer';
-import AppReducer from './appReducer';
+import homeReducer from './homeReducer';
 
 const rootReducer = combineReducers({
     blog: blogReducer,
-    app: AppReducer,
+    app: appReducer,
+    home: homeReducer,
 });
 
 export default rootReducer;

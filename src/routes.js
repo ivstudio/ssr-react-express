@@ -1,13 +1,14 @@
-import Home from './pages/Home';
 import About from './pages/About';
 import Blog, { ssrBlog } from './pages/Blog';
 import BlogDetails, { ssrBlogDetails } from './pages/Blog/BlogDetails';
+import Home, { ssrHome } from './pages/Home';
 
 const routes = [
     {
         component: Home,
         path: '/',
         exact: true,
+        loadData: ssrHome.fetchPhotos,
     },
     {
         component: About,

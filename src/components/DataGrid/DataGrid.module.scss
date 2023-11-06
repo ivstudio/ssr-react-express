@@ -1,0 +1,55 @@
+@import '../../styles/utils';
+
+$grid-columns: 50px 30px 1fr;
+
+.data-grid-container {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid $border-color;
+    border-radius: map-get($border-radius, 'md');
+}
+
+.data-grid-header {
+    display: grid;
+    grid-template-columns: $grid-columns;
+    height: 40px;
+    border-bottom: 1px solid $border-color;
+    gap: map-get($spacing, '8');
+    align-items: center;
+    padding: map-get($spacing, '8');
+    position: sticky;
+    top: 60px;
+    background-color: $gray-100;
+}
+
+.data-grid-label {
+    font-weight: $font-weight-bold;
+    margin: 0;
+}
+
+.data-grid-row {
+    display: grid;
+    grid-template-columns: $grid-columns;
+    background-color: $gray-100;
+    border-bottom: 1px solid $border-color;
+    padding: map-get($spacing, '8');
+    gap: map-get($spacing, '8');
+    font-size: map-get($font-size, base);
+    align-items: center;
+}
+
+.data-grid-row-image {
+    width: 30px;
+    height: 30px;
+    border-radius: 100%;
+}
+
+.data-grid-row-id {
+    font-weight: $font-weight-medium;
+    margin: 0;
+}
+
+.data-grid-row-title {
+    margin: 0;
+    text-transform: capitalize;
+}
