@@ -1,7 +1,8 @@
 import * as React from 'react';
 import ReactDOMServer from 'react-dom/server';
-import { StaticRouter } from 'react-router-dom/server';
 import { Provider } from 'react-redux';
+import { StaticRouter } from 'react-router-dom/server';
+
 import App from '../App';
 
 export default req => {

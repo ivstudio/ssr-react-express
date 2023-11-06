@@ -1,7 +1,8 @@
 import express from 'express';
-import renderer from './renderer';
+
 import activeRoute from './middlewares/activeRoute';
 import initializeStore from './middlewares/initializeStore';
+import renderer from './renderer';
 
 const app = express();
 app.use(express.static('public'));

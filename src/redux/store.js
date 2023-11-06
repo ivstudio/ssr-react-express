@@ -1,7 +1,8 @@
 import { legacy_createStore as createStore, applyMiddleware } from 'redux';
-import thunkMiddleware from 'redux-thunk';
 import { composeWithDevTools } from 'redux-devtools-extension';
-import rootReducer from '../redux/reducers';
+import thunkMiddleware from 'redux-thunk';
+
+import rootReducer from '@/redux/reducers';
 
 const middlewares = [thunkMiddleware];
 const middlewareEnhancer = applyMiddleware(...middlewares);

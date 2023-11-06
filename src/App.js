@@ -1,8 +1,9 @@
 import * as React from 'react';
-import routes from './routes';
 import { Route, Routes } from 'react-router-dom';
-import NoMatch from './pages/NoMatch';
+
 import AppBar from './components/AppBar';
+import NoMatch from './pages/NoMatch';
+import routes from './routes';
 import './styles/main.scss';
 
 /*
