@@ -7,6 +7,8 @@ body {
     font-size: $body-font-size;
     font-weight: $body-font-weight;
     background-color: $gray-300;
+    line-height: $line-height-base;
+    color: $gray-1000;
 }
 
 a {

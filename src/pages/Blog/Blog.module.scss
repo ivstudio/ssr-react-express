@@ -4,6 +4,7 @@
     display: grid;
     grid-template-columns: 1fr;
     gap: map-get($spacing, '24');
+    padding-top: 0;
 
     @include screen-up(md) {
         grid-template-columns: 1fr 1fr;

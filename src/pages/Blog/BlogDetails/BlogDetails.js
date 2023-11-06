@@ -18,8 +18,8 @@ const BlogDetails = () => {
     }
 
     return (
-        <Container className={styles['blog-details-container']}>
-            <h1>{post.title}</h1>
+        <Container className={styles['blog-details-container']} paper>
+            <h1 className={styles['page-title']}>{post.title}</h1>
             <h2>By user id:{post.userId}</h2>
             <h3>Post id:{post.id}</h3>
             <p>{post.body}</p>
