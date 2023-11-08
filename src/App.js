@@ -16,16 +16,8 @@ const App = () => {
         <>
             <AppBar />
             <Routes>
-                {routes.map(route => {
-                    const { path, component: Page, loadData } = route;
-                    return (
-                        <Route
-                            key={path}
-                            path={path}
-                            element={<Page />}
-                            loadData={loadData}
-                        />
-                    );
+                {routes.map(({ path, element }) => {
+                    return <Route key={path} path={path} element={element} />;
                 })}
                 <Route path="*" element={<NoMatch />} />
             </Routes>

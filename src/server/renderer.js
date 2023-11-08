@@ -9,7 +9,7 @@ export default req => {
     const store = req.app.store;
     const preloadedState = store.getState();
 
-    const html = ReactDOMServer.renderToString(
+    const html = ReactDOMServer.renderToPipeableStream(
         <React.StrictMode>
             <Provider store={store}>
                 <StaticRouter location={req.url}>
