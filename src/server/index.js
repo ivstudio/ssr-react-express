@@ -12,7 +12,7 @@ app.use(activeRoute);
 app.use(initializeStore);
 
 app.get('*', (req, res, next) => {
-    req.app.promise.then(() => res.send(renderer(req))).catch(next);
+    req.app.promise.then(() => renderer(req, res)).catch(next);
 });
 
 const PORT = process.env.PORT || 3000;

@@ -4,40 +4,44 @@ import { Provider } from 'react-redux';
 import { StaticRouter } from 'react-router-dom/server';
 
 import App from '../App';
+import Html from '../components/Html';
 
-export default req => {
+/*
+   Reference:
+    https://react.dev/reference/react-dom/server/renderToPipeableStream 
+*/
+export default (req, res) => {
     const store = req.app.store;
-    const preloadedState = store.getState();
-
-    const html = ReactDOMServer.renderToPipeableStream(
+    const metaData = { title: 'your page' };
+    const stream = ReactDOMServer.renderToPipeableStream(
         <React.StrictMode>
-            <Provider store={store}>
-                <StaticRouter location={req.url}>
-                    <App />
-                </StaticRouter>
-            </Provider>
-        </React.StrictMode>
+            <Html>
+                <Provider store={store}>
+                    <StaticRouter location={req.url}>
+                        <App data={{ metaData }} />
+                    </StaticRouter>
+                </Provider>
+            </Html>
+        </React.StrictMode>,
+        {
+            bootstrapScripts: ['bundle.js'],
+            onShellReady() {
+                res.statusCode = 200;
+                res.setHeader('content-type', 'text/html');
+                stream.pipe(res);
+            },
+            onShellError(error) {
+                res.statusCode = 500;
+                res.setHeader('content-type', 'text/html');
+                res.send('<h1>Something went wrong</h1>');
+            },
+            onError(error) {
+                res.statusCode = 404;
+                console.error(error);
+            },
+        }
     );
-
-    return `
-    <!DOCTYPE html>
-    <html class="no-js" lang="en">
-        <head>
-          <title>React Redux Express SSR</title>
-          <meta charset="utf-8">
-          <meta name="viewport" content="width=device-width, initial-scale=1">
-          <link rel="stylesheet" href="/main.css">
-          <meta name="description" content="ssr react express redux boilerplate">
-        </head>
-        <body>
-          <div id="root">${html}</div>
-          <script>
-            window.__PRELOADED_STATE__ = ${JSON.stringify(
-                preloadedState
-            ).replace(/</g, '\\u003c')}
-          </script>
-          <script src="bundle.js"></script>
-        </body>
-    </html>
-  `;
+    setTimeout(() => {
+        stream.abort();
+    }, 10000);
 };
