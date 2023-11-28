@@ -3,11 +3,10 @@ import { matchPath } from 'react-router-dom';
 import routes from '../../routes';
 
 /*
-    Description: ActiveRoute middleware:
-    routes.js is shared between the client and the server.
-    The activeRoute will look for a route that matches the request url.
-    If a route is found, it will contain the React Component 
-    and the Redux dispatch function needed to initialize the store.
+   The activeRoute middleware does the following:
+    - Checks if the request is for a static asset.
+    - Finds the active route that matches the request URL.
+    - Attaches the active route to the req.app object.
 */
 
 function activeRoute(req, res, next) {
@@ -17,10 +16,11 @@ function activeRoute(req, res, next) {
         return res.end();
     }
 
-    const activeRoute =
-        routes.find(route => matchPath(route.path, req.url)) || {};
+    function getActiveRoute() {
+        return routes.find(route => matchPath(route.path, req.url)) || {};
+    }
 
-    req.app.activeRoute = activeRoute;
+    res.app.activeRoute = getActiveRoute();
     next();
 }
 

@@ -5,12 +5,11 @@ import { setEntryUrl } from '@/redux/actions/appActions';
 import reducers from '@/redux/reducers';
 
 /*
-    Description: initializeStore middleware
-    1) we create a Redux store for each request.
-       and it's initialized with the reducers and the thunk middleware.
-    2) If loadData exists in the the active route. We dispatch the fuction.
-    3) The store and thunk promise are attached to the req app object to
-       be accessed later on.
+    The initializeStore middleware does the following:
+    - Creates a Redux store with the reducers and the thunk middleware.
+    - Calls the loadData function from the active route.
+    - Dispatches the setEntryUrl action with the current URL.
+    - Attaches the store to the res.app object.
 */
 
 function initializeStore(req, res, next) {
@@ -24,7 +23,8 @@ function initializeStore(req, res, next) {
 
     store.dispatch(setEntryUrl(req.url));
 
-    req.app = {
+    res.app = {
+        ...res.app,
         store,
         promise,
     };
