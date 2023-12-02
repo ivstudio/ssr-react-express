@@ -4,7 +4,7 @@ import Container from '@/components/Container';
 
 import styles from './About.module.scss';
 
-const About = () => {
+function About() {
     return (
         <Container paper>
             <h1 className={styles['page-title']}>About</h1>
@@ -83,6 +83,6 @@ const About = () => {
             </p>
         </Container>
     );
-};
+}
 
 export default About;

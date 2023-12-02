@@ -6,7 +6,7 @@ import DataGrid from '@/components/DataGrid';
 import useServerSideProps from '@/hooks/useServerSideProps';
 import { fetchPhotos } from '@/redux/actions/homeActions';
 
-const Home = () => {
+function Home() {
     const photos = useSelector(state => state.home.photos);
     useServerSideProps(fetchPhotos());
 
@@ -19,7 +19,7 @@ const Home = () => {
             <DataGrid data={photos} />
         </Container>
     );
-};
+}
 
 export const ssrHome = {
     fetchPhotos: dispatch => dispatch(fetchPhotos()),

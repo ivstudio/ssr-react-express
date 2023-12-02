@@ -8,7 +8,7 @@ import { fetchBlogPosts } from '@/redux/actions/blogActions';
 
 import styles from './Blog.module.scss';
 
-const Blog = () => {
+function Blog() {
     const posts = useSelector(state => state.blog.posts);
     useServerSideProps(fetchBlogPosts());
 
@@ -23,7 +23,7 @@ const Blog = () => {
             ))}
         </Container>
     );
-};
+}
 
 export const ssrBlog = {
     fetchBlogPosts: dispatch => dispatch(fetchBlogPosts()),

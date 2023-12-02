@@ -8,7 +8,7 @@ import { fetchBlogDetails } from '@/redux/actions/blogActions';
 
 import styles from './Blog.module.scss';
 
-const BlogDetails = () => {
+function BlogDetails() {
     const { postId } = useParams();
     const post = useSelector(state => state.blog.postDetails);
     useServerSideProps(fetchBlogDetails(postId));
@@ -25,12 +25,10 @@ const BlogDetails = () => {
             <p>{post.body}</p>
         </Container>
     );
-};
+}
 
 export const ssrBlogDetails = {
-    fetchBlogDetails: (dispatch, params) => {
-        return dispatch(fetchBlogDetails(params));
-    },
+    fetchBlogDetails: (dispatch, params) => dispatch(fetchBlogDetails(params)),
 };
 
 export default BlogDetails;
