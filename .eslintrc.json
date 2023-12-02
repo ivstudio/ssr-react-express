@@ -12,6 +12,32 @@
         "import/no-extraneous-dependencies": [
             "error",
             { "devDependencies": true }
+        ],
+        "prettier/prettier": ["error"],
+        "no-underscore-dangle": "off",
+        "import/order": [
+            "warn",
+            {
+                "groups": [
+                    "builtin",
+                    "external",
+                    "internal",
+                    ["parent", "sibling"]
+                ],
+                "pathGroups": [
+                    {
+                        "pattern": "react",
+                        "group": "external",
+                        "position": "before"
+                    }
+                ],
+
+                "newlines-between": "always",
+                "alphabetize": {
+                    "order": "asc",
+                    "caseInsensitive": true
+                }
+            }
         ]
     }
 }

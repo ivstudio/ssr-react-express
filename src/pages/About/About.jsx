@@ -1,7 +1,6 @@
 import React from 'react';
 
 import styles from './About.module.scss';
-
 import Container from '../../components/Container';
 
 function About() {

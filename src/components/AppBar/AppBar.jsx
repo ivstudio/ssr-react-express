@@ -2,7 +2,6 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 import styles from './AppBar.module.scss';
-
 import Menu from '../Menu';
 
 function AppBar() {

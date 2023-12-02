@@ -11,7 +11,7 @@ import './styles/main.scss';
     https://github.com/remix-run/react-router/tree/dev/examples/ssr
 */
 
-const App = () => {
+function App() {
     return (
         <>
             <AppBar />
@@ -31,6 +31,6 @@ const App = () => {
             </Routes>
         </>
     );
-};
+}
 
 export default App;
