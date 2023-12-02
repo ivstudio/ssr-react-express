@@ -6,10 +6,6 @@
     padding: map-get($spacing, '24');
     box-sizing: border-box;
 
-    &.paper-container {
-        padding-top: 0;
-    }
-
     @include screen-up(md) {
         max-width: map-get($grid-breakpoints, md);
     }
@@ -17,6 +13,11 @@
     @include screen-up(lg) {
         max-width: map-get($grid-breakpoints, lg);
     }
+}
+
+.paper-container {
+    @extend .container;
+    padding-top: 0;
 }
 
 .paper {

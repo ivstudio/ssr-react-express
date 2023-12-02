@@ -12,6 +12,7 @@
         "__isBrowser__": true
     },
     "rules": {
+        "react/require-default-props": "off",
         "no-restricted-exports": "off",
         "default-param-last": 0,
         "import/no-extraneous-dependencies": [
@@ -35,7 +36,7 @@
                         "position": "before"
                     }
                 ],
-
+                "pathGroupsExcludedImportTypes": ["react"],
                 "newlines-between": "always",
                 "alphabetize": {
                     "order": "asc",

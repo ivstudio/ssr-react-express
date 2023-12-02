@@ -1,8 +1,8 @@
 import React from 'react';
+
 import { useSelector } from 'react-redux';
 
 import styles from './Blog.module.scss';
-
 import Card from '../../components/Card';
 import Container from '../../components/Container';
 import useServerSideProps from '../../hooks/useServerSideProps';

@@ -1,4 +1,5 @@
 import React from 'react';
+
 import { NavLink } from 'react-router-dom';
 
 import styles from './Menu.module.scss';
@@ -18,7 +19,7 @@ const menuItems = [
     },
 ];
 
-const Menu = () => {
+function Menu() {
     return (
         <nav aria-label="Main menu" className={styles['top-nav']}>
             {menuItems.map(({ name, url }) => (
@@ -37,6 +38,6 @@ const Menu = () => {
             ))}
         </nav>
     );
-};
+}
 
 export default Menu;

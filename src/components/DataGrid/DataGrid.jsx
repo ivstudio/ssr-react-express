@@ -1,5 +1,7 @@
 import React from 'react';
 
+import PropTypes from 'prop-types';
+
 import styles from './DataGrid.module.scss';
 
 function DataGrid({ data }) {
@@ -26,5 +28,15 @@ function DataGrid({ data }) {
         </div>
     );
 }
+
+DataGrid.propTypes = {
+    data: PropTypes.arrayOf(
+        PropTypes.shape({
+            id: PropTypes.number.isRequired,
+            thumbnailUrl: PropTypes.string.isRequired,
+            title: PropTypes.string.isRequired,
+        })
+    ).isRequired,
+};
 
 export default DataGrid;

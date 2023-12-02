@@ -1,4 +1,5 @@
 import * as React from 'react';
+
 import ReactDOMServer from 'react-dom/server';
 import { Provider } from 'react-redux';
 import { StaticRouter } from 'react-router-dom/server';
@@ -14,7 +15,7 @@ import App from '../../App';
 */
 
 export default (req, res) => {
-    const store = res.app.store;
+    const { store } = res.app;
     const state = store.getState();
     const preloadedState = JSON.stringify(state).replace(/</g, '\\u003c');
 
