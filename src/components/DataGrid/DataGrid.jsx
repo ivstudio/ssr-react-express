@@ -2,11 +2,11 @@ import React from 'react';
 
 import styles from './DataGrid.module.scss';
 
-const DataGrid = ({ data }) => {
+function DataGrid({ data }) {
     return (
         <div className={styles['data-grid-container']}>
             <div className={styles['data-grid-header']}>
-                <p className={styles['data-grid-label']}></p>
+                <p className={styles['data-grid-label']} />
                 <p className={styles['data-grid-label']}>Id</p>
                 <p className={styles['data-grid-label']}>Title</p>
             </div>
@@ -25,6 +25,6 @@ const DataGrid = ({ data }) => {
             ))}
         </div>
     );
-};
+}
 
 export default DataGrid;

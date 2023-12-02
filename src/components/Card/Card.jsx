@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 import styles from './Card.module.scss';
 
-const Card = ({ data }) => {
+function Card({ data }) {
     return (
         <Link
             to={`/blog/${data.id}`}
@@ -14,6 +14,6 @@ const Card = ({ data }) => {
             <p className={styles['card-description']}>{data.body}</p>
         </Link>
     );
-};
+}
 
 export default Card;

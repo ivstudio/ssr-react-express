@@ -4,7 +4,7 @@ import classNames from 'classnames';
 
 import styles from './Container.module.scss';
 
-const Container = ({ children, paper = false, className }) => {
+function Container({ children, paper = false, className }) {
     return (
         <div
             className={classNames(styles.container, className, {
@@ -12,7 +12,7 @@ const Container = ({ children, paper = false, className }) => {
             })}
         >
             {paper ? (
-                <div className={classNames({ [styles['paper']]: paper })}>
+                <div className={classNames({ [styles.paper]: paper })}>
                     {children}
                 </div>
             ) : (
@@ -20,6 +20,6 @@ const Container = ({ children, paper = false, className }) => {
             )}
         </div>
     );
-};
+}
 
 export default Container;
