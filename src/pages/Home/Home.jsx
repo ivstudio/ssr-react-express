@@ -1,10 +1,10 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
 
-import Container from '@/components/Container';
-import DataGrid from '@/components/DataGrid';
-import useServerSideProps from '@/hooks/useServerSideProps';
-import { fetchPhotos } from '@/redux/actions/homeActions';
+import Container from '../../components/Container';
+import DataGrid from '../../components/DataGrid';
+import useServerSideProps from '../../hooks/useServerSideProps';
+import { fetchPhotos } from '../../redux/actions/homeActions';
 
 function Home() {
     const photos = useSelector(state => state.home.photos);

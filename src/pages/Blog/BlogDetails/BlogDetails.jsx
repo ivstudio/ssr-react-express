@@ -2,11 +2,11 @@ import React from 'react';
 import { useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
 
-import Container from '@/components/Container';
-import useServerSideProps from '@/hooks/useServerSideProps';
-import { fetchBlogDetails } from '@/redux/actions/blogActions';
-
 import styles from './Blog.module.scss';
+
+import Container from '../../../components/Container';
+import useServerSideProps from '../../../hooks/useServerSideProps';
+import { fetchBlogDetails } from '../../../redux/actions/blogActions';
 
 function BlogDetails() {
     const { postId } = useParams();

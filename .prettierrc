@@ -9,16 +9,5 @@
     "endOfLine": "auto",
     "htmlWhitespaceSensitivity": "css",
     "printWidth": 80,
-    "proseWrap": "preserve",
-    "importOrder": [
-        "react",
-        "<THIRD_PARTY_MODULES>",
-        "@/",
-        "^./(.*)$",
-        "^../(.*)$",
-        "(?=module.scss)"
-    ],
-    "importOrderSeparation": true,
-    "importOrderSortSpecifiers": true,
-    "plugins": ["@trivago/prettier-plugin-sort-imports"]
+    "proseWrap": "preserve"
 }

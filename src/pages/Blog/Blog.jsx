@@ -1,12 +1,12 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
 
-import Card from '@/components/Card';
-import Container from '@/components/Container';
-import useServerSideProps from '@/hooks/useServerSideProps';
-import { fetchBlogPosts } from '@/redux/actions/blogActions';
-
 import styles from './Blog.module.scss';
+
+import Card from '../../components/Card';
+import Container from '../../components/Container';
+import useServerSideProps from '../../hooks/useServerSideProps';
+import { fetchBlogPosts } from '../../redux/actions/blogActions';
 
 function Blog() {
     const posts = useSelector(state => state.blog.posts);

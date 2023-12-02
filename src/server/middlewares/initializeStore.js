@@ -1,8 +1,8 @@
 import { applyMiddleware, legacy_createStore as createStore } from 'redux';
 import thunk from 'redux-thunk';
 
-import { setEntryUrl } from '@/redux/actions/appActions';
-import reducers from '@/redux/reducers';
+import { setEntryUrl } from '../../redux/actions/appActions';
+import reducers from '../../redux/reducers';
 
 /*
     The initializeStore middleware does the following:
