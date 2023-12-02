@@ -8,12 +8,16 @@
         "ecmaVersion": "latest",
         "sourceType": "module"
     },
+    "globals": {
+        "__isBrowser__": true
+    },
     "rules": {
+        "no-restricted-exports": "off",
+        "default-param-last": 0,
         "import/no-extraneous-dependencies": [
             "error",
             { "devDependencies": true }
         ],
-        "prettier/prettier": ["error"],
         "no-underscore-dangle": "off",
         "import/order": [
             "warn",
